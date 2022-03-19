@@ -9,7 +9,7 @@ function DeepClone(value) {
     for (let key in obj) {
         if (Object.hasOwnProperty.call(obj, key)) {
             obj['isActiveClone'] = null;
-            temp[key] = clone(obj[key]);
+            temp[key] = DeepClone(obj[key]);
             delete obj['isActiveClone'];
         }
     }
